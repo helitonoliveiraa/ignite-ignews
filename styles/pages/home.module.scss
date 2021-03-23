@@ -1,0 +1,48 @@
+.contentContainer {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: calc(100vh - 8rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    max-width: 33.4rem;
+    margin-right: 10.2rem;
+  }
+}
+
+.hero {
+  strong {
+    font-weight: 700;
+    font-size: 2.4rem;
+  }
+
+  h1 {
+    margin: 4rem 0 2.4rem;
+    font-size: 7.2rem;
+    font-weight: 900;
+    line-height: 7.2rem;
+
+    > span {
+      color: var(--cyan-500);
+    }
+  }
+
+  p {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    color: var(--white);
+
+    span {
+      font-weight: 700;
+      color: var(--cyan-500);
+    }
+  }
+
+  button {
+    margin-top: 4rem;
+  }
+}

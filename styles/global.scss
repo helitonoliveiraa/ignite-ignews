@@ -9,7 +9,11 @@
 
   --gray-100: #e1e1e6;
   --gray-300: #a8a8b3;
+  --gray-400: #737380;
+  --gray-700: #29292E;
   --gray-900: #121214;
+
+  --green-900: #1F2729;
 
   --cyan-500: #61dafb;
   --yellow-500: #eba417;
@@ -33,7 +37,7 @@ html {
 
 body {
   background: var(--gray-900);
-  color: var(--white);
+  color: var(--gray-100);
 }
 
 body, input, textarea, select, button {
