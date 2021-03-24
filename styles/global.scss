@@ -36,8 +36,14 @@ html {
 }
 
 body {
-  background: var(--gray-900);
+  background: var(--gray-900) 
+    url('/images/background-img.svg') no-repeat 81% fixed;
+  background-size: 98.8rem auto contain;
   color: var(--gray-100);
+
+  @media (max-width: 720px) {
+    background-size: 60rem auto contain;
+  }
 }
 
 body, input, textarea, select, button {
