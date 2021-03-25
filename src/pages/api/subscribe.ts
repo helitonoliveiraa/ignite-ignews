@@ -15,9 +15,11 @@ type User = {
 };
 
 export default async (request: NextApiRequest, response: NextApiResponse) => {
+  // Verification for just listen POST method
   if (request.method === 'POST') {
     const session = await getSession({ req: request });
-
+    
+    // Get logged user from FaunaDB
     const user = await fauna.query<User>(
       q.Get(
         q.Match(
@@ -29,7 +31,9 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
     let customerId = user.data.stripe_customer_id;
 
+    // Verify if logged user already is a customer on stipe database
     if (!customerId) {
+      // Register the new payment customer on stripe database
       const stripeCustomer = await stripe.customers.create({
         email: session.user.email,
         // metadata

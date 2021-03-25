@@ -11,3 +11,8 @@ export const stripe = new Stripe(
     }
   }
 );
+
+/**
+ * This stripe setting is for that the STRIPE communicate with the back-end (API Routes)
+ * using the private key
+ */

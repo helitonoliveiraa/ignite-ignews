@@ -13,6 +13,7 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
   const [session] = useSession();
 
   async function handleSubscribe() {
+    // Verify if user is signed
     if (!session) {
       signIn();
       return;
