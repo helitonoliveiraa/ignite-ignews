@@ -1,0 +1,45 @@
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.posts {
+  max-width: 720px;
+  margin: 8rem auto 0;
+
+  a {
+    display: block;
+
+    & + a {
+      padding-top: 3.2rem;
+      margin-top: 3.2rem;
+      border-top: 1px solid var(--gray-650);
+    }
+
+    time {
+      color: var(--gray-300);
+    }
+
+    strong {
+      display: block;
+      margin-top: 1.6rem;
+      font-size: 2.4rem;
+      font-weight: bold;
+      color: var(--white);
+      line-height: 3.2rem;
+
+      transition: color 0.2s; 
+    }
+
+    p {
+      color: var(--gray-300);
+      margin-top: 0.4rem;
+      line-height: 2.6rem;
+    }
+
+    &:hover strong {
+      color: var(--yellow-500);
+    }
+  }
+}
