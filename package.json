@@ -17,7 +17,6 @@
     "prismic-dom": "^2.2.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-icons": "^4.2.0",
     "sass": "^1.32.8",
     "stripe": "^8.139.0"
   },

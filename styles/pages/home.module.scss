@@ -8,9 +8,24 @@
   align-items: center;
   justify-content: space-between;
 
+  background: var(--gray-900) url('/images/background-img.svg') no-repeat;
+  background-size: 60%;
+  background-position: top 1rem right 0;
+  
+
+  @media (max-width: 1500px) {
+    background-position: top 10px right 0;
+  }
+
+  @media (max-width: 1200px) {
+    background-position: top 4rem right 2rem;
+  }
+
   img {
     max-width: 33.4rem;
     margin-right: 10.2rem;
+    animation: infinite;
+    transform: rotate(360deg);
   }
 }
 

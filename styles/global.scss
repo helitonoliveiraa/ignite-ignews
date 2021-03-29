@@ -37,18 +37,8 @@ html {
 }
 
 body {
-  background: var(--gray-900) url('/images/background-img.svg') no-repeat;
-  background-size: 50%;
-  background-position: top 40px right calc(100% - 80%);
+  background: var(--gray-900);
   color: var(--gray-100);
-
-  @media (max-width: 1500px) {
-    background-position: top 40px right calc(100% - 85%);
-  }
-
-  @media (max-width: 1200px) {
-    background-position: top 100px right calc(100% - 90%);
-  }
 }
 
 body, input, textarea, select, button {
