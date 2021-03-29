@@ -6,6 +6,7 @@ import Prismic from '@prismicio/client';
 import { RichText } from 'prismic-dom';
 
 import styles from './styles.module.scss';
+import { useSession } from 'next-auth/client';
 
 type Post = {
   slug: string;
@@ -18,7 +19,9 @@ type PostsProps = {
   posts: Post[];
 };
 
-export default function posts({ posts }: PostsProps) {
+export default function Posts({ posts }: PostsProps) {
+  const [session] = useSession();
+
   return (
     <>
       <Head>
@@ -28,7 +31,13 @@ export default function posts({ posts }: PostsProps) {
       <main className={styles.container}>
         <div className={styles.posts}>
           {posts.map(post => (
-            <Link href={`/posts/${post.slug}`} key={post.slug}>
+            <Link 
+              href={session?.activeSubscription 
+                ? `/posts/${post.slug}` 
+                : `/posts/preview/${post.slug}`
+              } 
+              key={post.slug}
+            >
               <a>
                 <time>{post.updatedAt}</time>
                 <strong>{post.title}</strong>
@@ -52,7 +61,6 @@ export const getStaticProps: GetStaticProps = async () => {
     pageSize: 100,
   });
 
-  console.log(JSON.stringify(response, null, 2));
   const posts = response.results.map(post => {
     return {
       slug: post.uid,
@@ -67,7 +75,6 @@ export const getStaticProps: GetStaticProps = async () => {
       }),
     };
   });
-  // console.log(posts);
 
   return {
     props: {

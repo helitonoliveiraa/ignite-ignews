@@ -1,5 +1,6 @@
 import { useSession, signIn } from 'next-auth/client';
 import { getStripeJs } from '../../services/stripe-js';
+import { useRouter } from 'next/router';
 
 import { api } from '../../services/api';
 
@@ -11,11 +12,17 @@ type SubscribeButtonProps = {
 
 export function SubscribeButton({ priceId }: SubscribeButtonProps) {
   const [session] = useSession();
+  const router = useRouter();
 
   async function handleSubscribe() {
     // Verify if user is signed
     if (!session) {
       signIn();
+      return;
+    }
+
+    if (session.activeSubscription) {
+      router.push('/posts');
       return;
     }
 
