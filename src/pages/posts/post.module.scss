@@ -1,0 +1,45 @@
+.container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  background-image: none;
+}
+
+.post {
+  max-width: 720px;
+  margin: 8rem auto 0;
+
+  h1 {
+    font-size: 5.4rem;
+    font-weight: 900;
+    line-height: 6rem;
+    color: var(--white);
+  }
+
+  time {
+    display: block;
+    margin-top: 2.4rem;
+    line-height: 2.6rem;
+    color: var(--gray-300);
+  }
+
+  .postContent {
+    margin-top: 3.2rem;
+    line-height: 3rem;
+    font-size: 1.8rem;
+    color: var(--gray-100);
+
+    p, ul {
+      margin: 2.4rem 0;
+    }
+
+    ul {
+      padding-left: 2.4rem;
+
+      li {
+        margin: 0.8rem 0;
+      }
+    }
+  }
+}
