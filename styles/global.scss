@@ -17,24 +17,26 @@
   --green-900: #1F2729;
 
   --cyan-500: #61dafb;
-  --yellow-500: #eba417;
+  --pink-500: #BD4F6C;
 }
 
 html {
   font-size: 62.5%; /* 1rem to equal 10px */
-}
 
-@media (max-width: 1080px) {
-  html {
-    font-size: 56.25%; /* 0.9rem to equal 9px */
+  @media (max-width: 1080px) {
+    & {
+      font-size: 56.25%; /* 0.9rem to equal 9px */
+    }
+  }
+  
+  @media (max-width: 720px) {
+    & {
+      font-size: 50%; /* 0.8rem to equal 8px */
+    }
   }
 }
 
-@media (max-width: 720px) {
-  html {
-    font-size: 50%; /* 0.8rem to equal 8px */
-  }
-}
+
 
 body {
   background: var(--gray-900);
