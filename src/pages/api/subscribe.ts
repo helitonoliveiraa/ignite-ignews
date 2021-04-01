@@ -18,7 +18,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
   // Verification for just listen POST method
   if (request.method === 'POST') {
     const session = await getSession({ req: request });
-    
+
     // Get logged user from FaunaDB
     const user = await fauna.query<User>(
       q.Get(
@@ -33,6 +33,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
     // Verify if logged user already is a customer on stipe database
     if (!customerId) {
+      console.log('chegou aqui');
       // Register the new payment customer on stripe database
       const stripeCustomer = await stripe.customers.create({
         email: session.user.email,
@@ -65,6 +66,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
       success_url: process.env.STRIPE_SUCCESS_URL,
       cancel_url: process.env.STRIPE_CANCEL_URL,
     });
+
 
     return response.status(200).json({ sessionId: stripeCheckoutSession.id });
   } else {

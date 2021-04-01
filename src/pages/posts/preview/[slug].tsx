@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from 'next/head';
-import { getSession, useSession } from "next-auth/client";
+import { useSession } from "next-auth/client";
 import { getPrismicClient } from "../../../services/prismic";
 import { RichText } from 'prismic-dom';
 import Link from "next/link";
@@ -72,6 +72,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const response = await prismic.getByUID('post', String(slug), {});
 
+  
+
   const post = {
     slug,
     title: RichText.asText(response.data.title),
@@ -82,6 +84,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       year: 'numeric',
     }),
   };
+  console.log(post);
 
   return {
     props: {
