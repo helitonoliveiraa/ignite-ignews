@@ -46,6 +46,7 @@ So and also learned to implement the payment method and for that, i used the str
 - [React-icons](https://react-icons.github.io/react-icons/icons?name=ai)
 - [FaunaDB](https://fauna.com/)
 - [Stripe](https://stripe.com/en-br)
+- [Prismic CMS](https://prismic.io/)
 
 <br />
 <br />
