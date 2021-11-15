@@ -28,12 +28,9 @@
   <img src="https://res.cloudinary.com/dzn5ixmhq/image/upload/v1617134822/ignite/Screenshot_20210330_170102_1_ziloa5.png" alt="ignews">
 </p>
 
-<p>
+<p align="center">
   <a href="https://ignews-3x67flds3-helitonoliveira.vercel.app/" target="_blank">
-    <figure align="center">
-      <img src="https://res.cloudinary.com/dzn5ixmhq/image/upload/v1614434454/vercel-logo_xwytbg.png" width="150" />
-      <figcaption>Click here to preview</figcaption>
-    </figure>
+    <img src="https://res.cloudinary.com/dzn5ixmhq/image/upload/v1614434454/vercel-logo_xwytbg.png" width="150" />
   </a>
 </p>
 
